@@ -2,7 +2,7 @@
 [![Release](https://img.shields.io/github/v/release/869413421/chatgpt-web.svg?style=flat-square)](https://github.com/869413421/wechatbot/releases/tag/v1.1.3)
 ![Github stars](https://img.shields.io/github/stars/869413421/chatgpt-web.svg)
 ![Forks](https://img.shields.io/github/forks/869413421/chatgpt-web.svg?style=flat-square)
-> 本项目可以一键部署属于自己定制化的 chatgpt web程序，
+> 本项目可以一键部署属于自己定制化的 chatgpt web 程序(兼容gpt3.5)，
 > 只需下载release中对应平台的项目文件，修改配置后执行，打开 http://127.0.0.1:8080 ，便可以获得属于自己的chatgpt网站。
 > 
 > 参考项目：[codegen](https://github.com/git-cloner/codegen)
@@ -20,8 +20,9 @@
 > 当前项目是初始功能版本，开源出来给有需要的朋友使用。
 
 # 项目功能
+* 兼容3.0和3.5API
 * 基本问答界面
-* 机器人参数可配置
+* 参数可配置
 * markdown语法
 * 提问上下文
 # 使用前提
@@ -77,7 +78,8 @@ $ go run main.go
 # 运行项目，环境变量参考下方配置说明
 $ docker run -itd --name chatgpt-web --restart=always \
  -e APIKEY=换成你的key \
- -e MODEL=text-davinci-003 \
+ -e MODEL=gpt-3.5-turbo-0301 \
+ -e BOT_DESC=你是一个AI助手,我需要你模拟一名温柔贴心的女朋友来回答我的问题. \
  -e MAX_TOKENS=512 \
  -e TEMPREATURE=0.9 \
  -e TOP_P=1 \
